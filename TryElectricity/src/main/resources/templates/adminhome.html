@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<link rel="stylesheet" href="/css/adminhome.css">
+</head>
+<body>
+
+<h1>Admin Login Here</h1>
+<form th:action="@{/adminloginstatus}" th:object="${adminhome}" method="POST">
+        <label for="username">Enter Username</label> 
+        <input type="text" placeholder="Enter Username" name="username" th:field="*{username}">
+        <span th:if="${#fields.hasErrors('username')}" th:errors="*{username}"></span>
+        
+        <br> 
+        <br> 
+        <label for="password">Admin Password</label> 
+        <input type="password" placeholder="Enter Password" name="password" th:field="*{password}">
+        <span th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></span>
+         
+        <br>
+        <br>
+        <div th:if="${error}" th:text="${error}"></div>
+        
+        <input type="submit">
+        
+        <a th:href="@{/registerAdmin}">new Admin? register here</a>
+        
+    </form>
+
+
+</body>
+</html>

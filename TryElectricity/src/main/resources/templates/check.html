@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Customer Dashboard</title>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<style>
+body {
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	background-color: #f8f9fa;
+	margin: 0;
+	padding: 0;
+	min-height: 100vh;
+}
+
+header {
+	background-color: #007bff;
+	color: #fff;
+	padding: 20px;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+header .navbar-brand {
+	font-weight: bold;
+	color: #fff;
+}
+
+header .navbar-brand i {
+	margin-right: 10px;
+}
+
+nav.vertical-nav {
+	background-color: #343a40;
+	color: #fff;
+	width: 200px;
+	min-height: calc(100vh - 60px);
+	padding-top: 20px;
+	position: fixed;
+	top: 60px;
+	bottom: 0;
+}
+
+nav.vertical-nav ul {
+	list-style-type: none;
+	padding: 0;
+}
+
+nav.vertical-nav ul li {
+	padding: 10px 20px;
+}
+
+nav.vertical-nav ul li a {
+	color: #fff;
+	text-decoration: none;
+	display: block;
+}
+
+nav.vertical-nav ul li a i {
+	margin-right: 10px;
+}
+
+nav.vertical-nav ul li:hover {
+	background-color: #495057;
+}
+
+main {
+	margin-left: 200px;
+	padding: 20px;
+}
+
+.card {
+	border: none;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+	transition: transform 0.3s;
+}
+
+.card:hover {
+	transform: translateY(-5px);
+}
+
+.card-title {
+	font-weight: 600;
+}
+
+footer {
+	padding: 20px 0;
+	background-color: #007bff;
+	color: #fff;
+	text-align: center;
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+}
+</style>
+
+<body>
+	<header> </header>
+
+	<nav class="vertical-nav">
+		<ul>
+			<li><a href="#"><i class="fas fa-tachometer-alt"></i>
+					Dashboard</a></li>
+			<li><a th:href="@{/billlist}"><i class="fas fa-file-invoice"></i> Bills</a></li>
+			<li><a href="#"><i class="fas fa-exchange-alt"></i>
+					Transactions</a></li>
+			<li><a th:href="@{/giveComplaintForm}"><i class="fas fa-comments"></i> Complaints</a></li>
+		</ul>
+	</nav>
+
+	<main>
+		<div class="container">
+			<h1 class="text-center mb-4">
+				<i class="fas fa-tachometer-alt"></i> Customer Dashboard
+			</h1>
+			<p class="lead text-center mb-5">Welcome to your electricity
+				billing dashboard.</p>
+
+			
+
+				
+
+
+				<div class="row">
+					<div class="col-md-6 mb-4">
+
+						<div class="card">
+							<div class="card-body">
+								<h5 class="card-title">
+									<i class="fas fa-file-invoice"></i> View Bill
+								</h5>
+								<p class="card-text">View and manage your electricity bills.</p>
+
+								<a th:href="@{/billlist}" class="btn btn-primary">Bill List</a>
+
+							</div>
+						</div>
+					</div>
+					
+					
+					<div class="col-md-6 mb-4">
+
+						<div class="card">
+							<div class="card-body">
+								<h5 class="card-title">
+									<i class="fas fa-file-invoice"></i> Give Complaint form
+								</h5>
+								<p class="card-text">View and manage  Complaint </p>
+
+								<a th:href="@{/giveComplaintForm}" class="btn btn-primary">Give Complaint form</a>
+
+							</div>
+						</div>
+					</div>
+					
+					<!-- More links here  -->
+
+
+
+
+
+
+
+
+				</div>
+			</div>
+
+
+		</div>
+	</main>
+
+	<footer>
+		<p class="mb-0">&copy; 2023 Electricity Billing System</p>
+	</footer>
+
+	<script
+		src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	<script
+		src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>

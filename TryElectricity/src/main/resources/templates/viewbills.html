@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>View Bills</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1><i class="fas fa-file-invoice-dollar"></i> Your Electricity Bills</h1>
+        <p class="lead">View and manage your electricity bills here.</p>
+
+        <table class="table table-striped mt-4">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Bill ID</th>
+                    <th>Amount</th>
+                    <th>Due Date</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="bill : ${bills}">
+                    <td th:text="${bill.id}"></td>
+                    <td th:text="${'₹' + #numbers.formatDecimal(bill.amount, 0, 2)}"></td>
+                    <td th:text="${#dates.format(bill.dueDate, 'dd-MM-yyyy')}"></td>
+                    <td>
+                        <span th:if="${bill.paid}" class="badge badge-success"><i class="fas fa-check"></i> Paid</span>
+                        <span th:unless="${bill.paid}" class="badge badge-danger"><i class="fas fa-times"></i> Unpaid</span>
+                    </td>
+                    <td>
+                        <form th:if="${!bill.paid}" th:action="@{/payBill}" method="post" class="mb-0">
+                            <input type="hidden" name="billId" th:value="${bill.id}" />
+                            <button type="submit" class="btn btn-sm btn-primary">
+                                <i class="fas fa-credit-card"></i> Pay Now
+                            </button>
+                        </form>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <a th:href="@{/customerDashboard}" class="btn btn-secondary mt-3">
+            <i class="fas fa-arrow-left"></i> Back to Dashboard
+        </a>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
