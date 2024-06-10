@@ -1,15 +1,17 @@
 Overview
 The Electricity Billing System is a web-based application designed to streamline the management of electricity bills for customers and administrators. Built using Spring Boot, the system leverages a robust tech stack including Spring Web, Thymeleaf, Spring Dev Tools, Spring Validation, and MySQL for database management.
-
-Features
-Customer Module
+********
+Features => 
+1) Customer Module
 Registration and Login: Customers can register and log in to the system securely.
 Customer Dashboard:
 View Bills: Customers can view their billing history and current bills.
 File Complaints: Customers can file complaints regarding their bills or services.
-Admin Module
-Registration and Login: Admins can register and log in to the system securely.
-Admin Dashboard:
+
+
+2) Admin Module
+* Registration and Login: Admins can register and log in to the system securely.
+*Admin Dashboard:
 Manage Customers: Admins can view and manage the list of customers.
 Generate Bills: Admins can generate new bills for customers.
 View Complaints: Admins can view and address complaints filed by customers.
