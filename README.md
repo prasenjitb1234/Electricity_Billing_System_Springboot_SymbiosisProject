@@ -1,6 +1,6 @@
 Overview : 
 
-The Electricity Billing System is a web-based application designed to streamline the management of electricity bills for customers and administrators. Built using Spring Boot, the system leverages a robust tech stack including Spring Web, Thymeleaf, Spring Dev Tools, Spring Validation, and MySQL for database management.
+The Electricity Billing System is a web-based application built using Java springboot designed to streamline the management of electricity bills for customers and administrators. Built using Spring Boot, the system leverages a robust tech stack including Spring Web, Thymeleaf, Spring Dev Tools, Spring Validation, and MySQL for database management.
 ********
 Features => 
 1) Customer Module :
