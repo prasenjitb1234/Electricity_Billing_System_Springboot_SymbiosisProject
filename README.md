@@ -32,7 +32,7 @@ The Electricity Billing System is a web-based application built using Java Sprin
 
 1. **Clone the Repository:**
    ```bash
-   git clone <repository_url>
+   git clone https://github.com/prasenjitb1234/Electricity_Billing_System_Springboot_SymbiosisProject.git
 
 2. **Open in Eclipse IDE:**
 
