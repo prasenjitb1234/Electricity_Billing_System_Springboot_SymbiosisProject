@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Generate Bill</title>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+<style>
+body {
+	font-family: 'Poppins', sans-serif;
+	background-color: #f8f9fa;
+}
+
+.container {
+	max-width: 500px;
+	padding: 40px;
+	background-color: #fff;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+	border-radius: 8px;
+}
+
+h1 {
+	font-weight: 700;
+	text-align: center;
+	margin-bottom: 30px;
+}
+
+.form-group label {
+	font-weight: 500;
+}
+
+.form-control {
+	border-radius: 4px;
+}
+
+.form-control:focus {
+	box-shadow: none;
+	border-color: #007bff;
+}
+
+.btn-primary {
+	background-color: #007bff;
+	border-color: #007bff;
+	transition: background-color 0.3s, border-color 0.3s;
+}
+
+.btn-primary:hover {
+	background-color: #0069d9;
+	border-color: #0062cc;
+}
+</style>
+</head>
+<body>
+	<div class="container mt-5 animate__animated animate__fadeInUp">
+		<h1>
+			<i class="fas fa-bolt"></i> Generate Bill
+		</h1>
+		<form th:action="@{/generateBill}" method="post" class="mt-4">
+			<div class="form-group">
+				<label for="customerId"><i class="fas fa-user"></i> Customer
+					ID:</label> <input type="number" id="customerId" name="customerId"
+					class="form-control" required>
+			</div>
+			<div class="form-group">
+				<label for="amount"><i class="fas fa-rupee-sign"></i>
+					Amount:</label> <input type="number" id="amount" name="amount" step="0.01"
+					class="form-control" required>
+			</div>
+			<button type="submit" class="btn btn-primary btn-block">
+				<i class="fas fa-paper-plane"></i> Generate Bill
+			</button>
+		</form>
+	</div>
+
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+	<script
+		src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+	<script
+		src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

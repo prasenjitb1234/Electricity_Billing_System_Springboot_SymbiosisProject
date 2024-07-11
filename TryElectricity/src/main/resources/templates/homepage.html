@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Electricity Billing System</title>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+<style>
+body {
+	font-family: 'Poppins', sans-serif;
+	background-color: #fff;
+}
+
+.navbar {
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
+	font-weight: 700;
+	letter-spacing: 1px;
+}
+
+.nav-link {
+	font-weight: 500;
+	letter-spacing: 0.5px;
+}
+
+.hero {
+	background-image: linear-gradient(to bottom, #dddddd, #0062cc);
+	color: #fff;
+	padding: 100px 0;
+}
+
+.hero h1 {
+	font-weight: 700;
+	font-size: 48px;
+	text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.hero p {
+	font-size: 20px;
+	text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.card {
+	border: none;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+	transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+	transform: translateY(-5px);
+	box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card-title {
+	font-weight: 600;
+}
+
+.btn-primary {
+	background-color: #007bff;
+	border-color: #007bff;
+	transition: background-color 0.3s, border-color 0.3s;
+}
+
+.btn-primary:hover {
+	background-color: #0069d9;
+	border-color: #0062cc;
+}
+
+footer {
+	background-color: #343a40;
+	color: #fff;
+	padding: 20px 0;
+}
+</style>
+</head>
+<body>
+	<header>
+		<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+			<div class="container">
+				<a class="navbar-brand" href="#"><i class="fas fa-bolt"></i>
+					Electricity Billing</a>
+				<button class="navbar-toggler" type="button" data-toggle="collapse"
+					data-target="#navbarNav" aria-controls="navbarNav"
+					aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarNav">
+					<ul class="navbar-nav ml-auto">
+						<li class="nav-item"><a class="nav-link"
+							th:href="@{/registerCustomer}"><i class="fas fa-user-plus"></i>
+								Register Customer</a></li>
+						<li class="nav-item"><a class="nav-link"
+							th:href="@{/registerAdmin}"><i class="fas fa-user-plus"></i>
+								Register Admin</a></li>
+						<li class="nav-item"><a class="nav-link"
+							th:href="@{/customerlogin}"><i class="fas fa-sign-in-alt"></i>
+								Login Customer</a></li>
+						<li class="nav-item"><a class="nav-link"
+							th:href="@{/adminlogin}"><i class="fas fa-sign-in-alt"></i>
+								Login Admin</a></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+	</header>
+
+	<main>
+		<section class="hero">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-6 animate__animated animate__fadeInLeft">
+						<h1 class="mb-4">Welcome to Electricity Billing System</h1>
+						<p class="lead mb-4">Manage your electricity billing system
+							with ease.</p>
+						<a href="#" class="btn btn-light btn-lg">Get Started</a>
+					</div>
+					<div class="col-md-6 animate__animated animate__fadeInRight">
+						<img src="" th:src="@{/images/img1.jpg}" class="img-fluid rounded"
+							alt="Electricity Billing">
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="py-5">
+			<div class="container">
+				<h2 class="text-center mb-4">Features</h2>
+				<div class="row">
+					<div class="col-md-4 mb-4">
+						<div
+							class="card h-100 animate__animated animate__fadeInUp animate__delay-1s">
+							<div class="card-body">
+								<i class="fas fa-bolt fa-3x mb-3"></i>
+								<h5 class="card-title">Real-Time Billing</h5>
+								<p class="card-text">Get accurate and up-to-date billing
+									information for your electricity consumption.</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4 mb-4">
+						<div
+							class="card h-100 animate__animated animate__fadeInUp animate__delay-2s">
+							<div class="card-body">
+								<i class="fas fa-chart-line fa-3x mb-3"></i>
+								<h5 class="card-title">Usage Analytics</h5>
+								<p class="card-text">Track and analyze your electricity
+									usage patterns to optimize your consumption.</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4 mb-4">
+						<div
+							class="card h-100 animate__animated animate__fadeInUp animate__delay-3s">
+							<div class="card-body">
+								<i class="fas fa-mobile-alt fa-3x mb-3"></i>
+								<h5 class="card-title">Ask Your Problems</h5>
+								<p class="card-text">Submit your queries so we can Fix them.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</main>
+
+	<footer class="bg-dark">
+		<div class="container text-center">
+			<p class="mb-0">&copy; 2023 Electricity Billing System. All
+				rights reserved.</p>
+		</div>
+	</footer>
+
+	<script
+		src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	<script
+		src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>
